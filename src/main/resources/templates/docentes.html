@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Docentes</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Docentes</h1>
+    <p>Lista de docentes</p>
+    <table class="table table-bordered table-sm">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="docente : ${docentes}">
+            <td th:text="${docente.idDocente}"></td>
+            <td th:text="${docente.nombre}"></td>
+            <td th:text="${docente.apellido}"></td>
+            <td th:text="${docente.edad}"></td>
+            <td>
+                <a th:href="@{/docentes/editar/{id}(id=${docente.idDocente})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/docentes/{id}(id=${docente.idDocente})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

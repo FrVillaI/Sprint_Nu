@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Editar Formuario</h2>
+    <form th:action="@{/docentes/{id}(id=${docente.idDocente})}" th:object="${docente}" method="POST">
+        <div class="form-group">
+            <label> Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Enter nombre"  >
+        </div>
+        <div class="form-group">
+            <label> Apellido:</label>
+            <input type="text" name="apellido" th:field="*{apellido}" class="form-control" placeholder="Enter epellido"  >
+        </div>
+        <div class="form-group">
+            <label> Edad:</label>
+            <input type="number" name="edad" th:field="*{edad}" class="form-control" placeholder="Enter edad"  >
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>

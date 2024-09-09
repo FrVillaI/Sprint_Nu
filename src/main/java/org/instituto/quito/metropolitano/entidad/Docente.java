@@ -1,22 +1,25 @@
 package org.instituto.quito.metropolitano.entidad;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
-@Data
+@Table(name = "docentes")
+@RequiredArgsConstructor
+@Getter
+@Setter
 public class Docente implements Serializable {
     @Serial
     private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idDocente;
+    private Long idDocente;
     private String nombre;
     private String apellido;
     private int edad;
