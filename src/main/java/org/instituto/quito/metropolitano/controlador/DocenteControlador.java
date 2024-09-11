@@ -29,7 +29,7 @@ public class DocenteControlador {
     }
 
     @PostMapping("/docentes")
-    public String guardarDocente(@ModelAttribute("estudiante") Docente docente){
+    public String guardarDocente(@ModelAttribute("docente") Docente docente){
         docentesServices.guardarDocente(docente);
         return "redirect:/docentes";
     }

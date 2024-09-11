@@ -15,7 +15,7 @@ public class Aula implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idAula;
+    private Long idAula;
     private int numeroAula;
     private int capacidadEstudiantes;
 }

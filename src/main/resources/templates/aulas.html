@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aulas</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Aulas</h1>
+    <p>Lista de Aulas</p>
+    <table class="table table-bordered table-sm">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Numero de Aula</th>
+            <th>Capacidad de Estudiantes</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="aula : ${aulas}">
+            <td th:text="${aula.idAula}"></td>
+            <td th:text="${aula.numeroAula}"></td>
+            <td th:text="${aula.capacidadEstudiantes}"></td>
+            <td>
+                <a th:href="@{/aulas/editar/{id}(id=${aula.idAula})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/aulas/{id}(id=${aula.idAula})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

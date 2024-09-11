@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registro Formuario</h2>
+    <form th:action="@{/aulas}" th:object="${aulas}" method="POST">
+        <div class="form-group">
+            <label> Numero de Aula:</label>
+            <input type="number" name="nombre" th:field="*{numeroAula}" class="form-control" placeholder="Enter numero de aula"  >
+        </div>
+        <div class="form-group">
+            <label> Capacidad de Estudiantes:</label>
+            <input type="number" name="apellido" th:field="*{capacidadEstudiantes}" class="form-control" placeholder="Enter capacidad de estudiantes"  >
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>
