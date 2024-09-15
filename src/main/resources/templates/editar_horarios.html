@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edicion</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <h2>Editar Formuario</h2>
+    <form th:action="@{/horarios/{id}(id=${horario.idHorario})}" th:object="${horarios}" method="POST">
+        <div class="form-group">
+            <label> Hora Inicio:</label>
+            <input type="time" name="horaInicio" th:field="*{horaInicio}" class="form-control" placeholder="Enter hora Inicio"  >
+        </div>
+        <div class="form-group">
+            <label> Hora Fin:</label>
+            <input type="time" name="horarioFin" th:field="*{horarioFin}" class="form-control" placeholder="Enter horario Fin"  >
+        </div>
+        <div class="form-group">
+            <label> Materia:</label>
+            <input type="number" name="materia" th:field="*{materia}" class="form-control" placeholder="Enter materia"  >
+        </div>
+        <div class="form-group">
+            <label> Aula:</label>
+            <input type="number" name="aula" th:field="*{aula}" class="form-control" placeholder="Enter aula"  >
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</body>
+</html>

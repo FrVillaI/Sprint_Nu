@@ -14,7 +14,7 @@ public class Horario implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idHorario;
+    private Long idHorario;
     private Time horaInicio;
     private Time horarioFin;
     @ManyToOne

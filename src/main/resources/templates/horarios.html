@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaft.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>Matricula</h1>
+    <p>Lista de Matricula</p>
+    <table class="table table-bordered table-sm">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Hora Inicio</th>
+            <th>Hora Fin</th>
+            <th>Materia </th>
+            <th>Aula</th>
+            <th>Acciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="horario : ${horarios}">
+            <td th:text="${horario.idHorario}"></td>
+            <td th:text="${horario.horaInicio}"></td>
+            <td th:text="${horario.horarioFin}"></td>
+            <td th:text="${horario.materia}"></td>
+            <td th:text="${horario.aula}"></td>
+            <td>
+                <a th:href="@{/horarios/editar/{id}(id=${horario.idHorario})}" class="btn btn-info">Editar</a>
+                <a th:href="@{/horarios/{id}(id=${horario.idMatricula})}" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

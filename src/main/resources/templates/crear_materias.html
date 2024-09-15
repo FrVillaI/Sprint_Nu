@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h2>Registro Formulario</h2>
+    <form th:action="@{/materias}" th:object="${materias}" method="POST">
+        <div class="form-group">
+            <label> Nombre:</label>
+            <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Enter Nombre">
+        </div>
+        <div class="form-group">
+            <label> Descripción:</label>
+            <input type="text" name="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Enter Descripción">
+        </div>
+        <div class="form-group">
+            <label> Docente:</label>
+            <select name="docente.idDocente" th:field="*{docente.idDocente}" required>
+                <option value="" selected disabled>Seleccionar Docente</option>
+                <option th:each="docente : ${docentes}"
+                        th:value="${docente.idDocente}"
+                        th:text="${docente.nombre}">
+                </option>
+            </select>
+
+        </div>
+        <button class="btn btn-primary">Submit</button>
+    </form>
+</div>
+</body>
+</html>

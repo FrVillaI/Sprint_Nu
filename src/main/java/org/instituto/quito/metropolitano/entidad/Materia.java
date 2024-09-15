@@ -13,10 +13,10 @@ public class Materia implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idMateria;
+    private Long idMateria;
     private String nombre;
     private String descripcion;
     @ManyToOne
-    @JoinColumn(name = "idDocente",referencedColumnName = "idDocente")
+    @JoinColumn(name = "idDocente")
     private Docente docente;
 }

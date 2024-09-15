@@ -15,7 +15,7 @@ public class Matricula implements Serializable {
     private static final long serialVersionUID=1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idMatricula;
+    private Long idMatricula;
     private LocalDate fechaMatricula;
     @ManyToOne
     @JoinColumn(name = "idMateria", referencedColumnName = "idMateria")
