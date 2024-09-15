@@ -20,11 +20,23 @@
         </div>
         <div class="form-group">
             <label> Materia:</label>
-            <input type="number" name="materia" th:field="*{materia}" class="form-control" placeholder="Enter materia"  >
+            <select name="materia.idMateria" th:field="*{materia.idMateria}" required>
+                <option value="" selected disabled>Seleccionar Materias</option>
+                <option th:each="materia : ${materias}"
+                        th:value="${materia.idMateria}"
+                        th:text="${materia.nombre}">
+                </option>
+            </select>
         </div>
         <div class="form-group">
             <label> Aula:</label>
-            <input type="number" name="aula" th:field="*{aula}" class="form-control" placeholder="Enter aula"  >
+            <select name="aula.idAula" th:field="*{aula.idAula}" required>
+                <option value="" selected disabled>Seleccionar Materias</option>
+                <option th:each="aula : ${aulas}"
+                        th:value="${aula.idAula}"
+                        th:text="${aula.numeroAula}">
+                </option>
+            </select>
         </div>
         <button class="btn btn-primary">Submit</button>
     </form>

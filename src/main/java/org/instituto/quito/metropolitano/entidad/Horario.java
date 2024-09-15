@@ -15,8 +15,8 @@ public class Horario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idHorario;
-    private Time horaInicio;
-    private Time horarioFin;
+    private String horaInicio;
+    private String horarioFin;
     @ManyToOne
     @JoinColumn(name = "idMateria",referencedColumnName = "idMateria")
     private Materia materia;

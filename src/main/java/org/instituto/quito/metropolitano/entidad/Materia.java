@@ -2,12 +2,17 @@ package org.instituto.quito.metropolitano.entidad;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serial;
 import java.io.Serializable;
 
 @Entity
-@Data
+@RequiredArgsConstructor
+@Getter
+@Setter
 public class Materia implements Serializable {
     @Serial
     private static final long serialVersionUID=1L;

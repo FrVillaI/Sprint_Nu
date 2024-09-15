@@ -25,7 +25,7 @@
             <td th:text="${materia.idMateria}"></td>
             <td th:text="${materia.nombre}"></td>
             <td th:text="${materia.descripcion}"></td>
-            <td th:text="${materia.docente}"></td>
+            <td th:text="${materia.docente.nombre}"></td>
             <td>
                 <a th:href="@{/materias/editar/{id}(id=${materia.idMateria})}" class="btn btn-info">Editar</a>
                 <a th:href="@{/materias/{id}(id=${materia.idMateria})}" class="btn btn-danger">Eliminar</a>

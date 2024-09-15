@@ -26,11 +26,11 @@
             <td th:text="${horario.idHorario}"></td>
             <td th:text="${horario.horaInicio}"></td>
             <td th:text="${horario.horarioFin}"></td>
-            <td th:text="${horario.materia}"></td>
-            <td th:text="${horario.aula}"></td>
+            <td th:text="${horario.materia.nombre}"></td>
+            <td th:text="${horario.aula.numeroAula}"></td>
             <td>
                 <a th:href="@{/horarios/editar/{id}(id=${horario.idHorario})}" class="btn btn-info">Editar</a>
-                <a th:href="@{/horarios/{id}(id=${horario.idMatricula})}" class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/horarios/{id}(id=${horario.idHorario})}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
         </tbody>

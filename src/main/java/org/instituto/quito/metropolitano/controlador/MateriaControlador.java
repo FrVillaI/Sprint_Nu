@@ -41,12 +41,13 @@ public class MateriaControlador {
 
     @GetMapping("/materias/editar/{id}")
     public String mostrarFomularioEditar(@PathVariable Long id, Model model){
-        model.addAttribute("materias",materiaServices.obtenerMateria(id));
+        model.addAttribute("docentes", docentesServices.listarDocentes());
+        model.addAttribute("materia",materiaServices.obtenerMateria(id));
         return "editar_materias";
     }
 
     @PostMapping("/materias/{id}")
-    public String actualizarDocente(@PathVariable Long id, @ModelAttribute("materias") Materia materia, Model model){
+    public String actualizarDocente(@PathVariable Long id, @ModelAttribute("materia") Materia materia, Model model){
         Materia materiaExistente = materiaServices.obtenerMateria(id);
         materiaExistente.setIdMateria(id);
         materiaExistente.setNombre(materia.getNombre());

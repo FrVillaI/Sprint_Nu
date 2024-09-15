@@ -8,18 +8,30 @@
 </head>
 <body>
 <h2>Editar Formuario</h2>
-    <form th:action="@{/matriculas/{id}(id=${matricula.idMatricula})}" th:object="${matriculas}" method="POST">
-        <<div class="form-group">
-        <label> Fecha Matricula:</label>
-        <input type="date" name="fechaMatricula" th:field="*{fechaMatricula}" class="form-control" placeholder="Enter Fecha"  >
+    <form th:action="@{/matriculas/{id}(id=${matricula.idMatricula})}" th:object="${matricula}" method="POST">
+        <div class="form-group">
+            <label> Fecha Matricula:</label>
+            <input type="date" name="fechaMatricula" th:field="*{fechaMatricula}" class="form-control" placeholder="Enter Fecha"  >
         </div>
         <div class="form-group">
-            <label> Materia:</label>
-            <input type="number" name="materia" th:field="*{materia}" class="form-control" placeholder="Enter materia"  >
+            <label> Docente:</label>
+            <select name="materia.idMateria" th:field="*{materia.idMateria}" required>
+                <option value="" selected disabled>Seleccionar Docente</option>
+                <option th:each="materia : ${materias}"
+                        th:value="${materia.idMateria}"
+                        th:text="${materia.nombre}">
+                </option>
+            </select>
         </div>
         <div class="form-group">
-            <label> Estudiante:</label>
-            <input type="number" name="estudiante" th:field="*{estudiante}" class="form-control" placeholder="Enter estudiante"  >
+            <label> Docente:</label>
+            <select name="estudiante.idEstudiante" th:field="*{estudiante.idEstudiante}" required>
+                <option value="" selected disabled>Seleccionar Docente</option>
+                <option th:each="estudiante : ${estudiantes}"
+                        th:value="${estudiante.idEstudiante}"
+                        th:text="${estudiante.nombre}">
+                </option>
+            </select>
         </div>
         <button class="btn btn-primary">Submit</button>
     </form>
